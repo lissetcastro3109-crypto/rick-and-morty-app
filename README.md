@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rick and Morty App
 
-## Getting Started
+## Descripción del proyecto
 
-First, run the development server:
+Aplicación web desarrollada con Next.js y TypeScript que permite consultar personajes de la serie Rick and Morty mediante su API pública.
+
+La aplicación permite:
+- Visualizar personajes en tarjetas.
+- Consultar información como nombre, estado y especie.
+- Navegar entre páginas de personajes.
+- Agregar personajes a una lista de favoritos.
+- Consultar los favoritos guardados.
+- Mantener la persistencia de favoritos mediante Supabase.
+
+## Tecnologías utilizadas
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Supabase
+- Rick and Morty API
+
+## Instalación local
+
+1. Clonar el repositorio:
+
+```bash
+git clone https://github.com/lissetcastro3109-crypto/rick-and-morty-app.git
+```
+
+2. Entrar en la carpeta:
+
+```bash
+cd rick-and-morty-app
+```
+
+3. Instalar dependencias:
+
+```bash
+npm install
+```
+
+4. Crear un archivo `.env.local` en la raíz del proyecto.
+
+5. Configurar las variables de entorno:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=tu_url_de_supabase
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=tu_clave_publica
+```
+
+6. Iniciar el servidor:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+7. Abrir en el navegador:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Variables de entorno
 
-## Learn More
+| Variable | Descripción |
+|---|---|
+| NEXT_PUBLIC_SUPABASE_URL | URL del proyecto Supabase |
+| NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY | Clave pública de Supabase |
 
-To learn more about Next.js, take a look at the following resources:
+**Importante:** No compartir ni subir credenciales privadas. El archivo `.env.local` debe permanecer excluido del repositorio.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Base de datos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Se utiliza Supabase como servicio de base de datos para almacenar los personajes favoritos.
 
-## Deploy on Vercel
+Tabla utilizada: `Favoritos`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Campos principales:
+- id
+- character_id
+- name
+- image
+- status
+- species
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## API utilizada
+
+Rick and Morty API:
+
+https://rickandmortyapi.com/
+
+## Autor
+
+Proyecto desarrollado como parte del curso Full Stack Junior.
